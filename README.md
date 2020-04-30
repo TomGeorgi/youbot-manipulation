@@ -11,6 +11,9 @@ The youbot_manipulation meta-package contains the following packages:
 
 
 ### Prerequisites
+
+OUTDATED 
+
 First, install the required ROS and especially MoveIt! packages by executing:
 
     apt-get install python-wstool ros-hydro-roscpp ros-hydro-pluginlib ros-hydro-urdf \
