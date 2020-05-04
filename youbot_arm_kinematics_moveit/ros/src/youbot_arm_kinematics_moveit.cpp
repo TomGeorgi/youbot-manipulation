@@ -27,10 +27,10 @@ KinematicsPlugin::~KinematicsPlugin()
 bool KinematicsPlugin::initialize(const std::string &robot_description,
         const std::string &group_name,
         const std::string &base_frame,
-        const std::string &tip_frame,
+        const std::vector<std::string>& tip_frames,
         double search_discretization)
 {
-    setValues(robot_description, group_name, base_frame, tip_frame,
+    setValues(robot_description, group_name, base_frame, tip_frames,
             search_discretization);
 
     urdf::Model robot_model;
@@ -38,7 +38,7 @@ bool KinematicsPlugin::initialize(const std::string &robot_description,
 
     std::vector<double> lower_limits;
     std::vector<double> upper_limits;
-    if (!extractKinematicData(robot_model, base_frame, tip_frame,
+    if (!extractKinematicData(robot_model, base_frame, tip_frames[0],
             joint_names_, link_names_, lower_limits, upper_limits)) {
         return false;
     }

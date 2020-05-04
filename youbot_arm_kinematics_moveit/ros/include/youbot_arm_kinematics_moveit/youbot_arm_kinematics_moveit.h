@@ -32,7 +32,7 @@ class KinematicsPlugin : public kinematics::KinematicsBase
         bool initialize(const std::string &robot_description,
                 const std::string &group_name,
                 const std::string &base_frame,
-                const std::string &tip_frame,
+                const std::vector<std::string>& tip_frames,
                 double search_discretization);
 
         /**
